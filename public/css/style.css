@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@200;400;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: all .2s linear;
+    list-style: none;
+    text-transform: capitalize;
+}
+
+:root {
+    --Header-Font-Family: 'Fraunces', serif;
+    --Body-Font-Family: 'Nunito', sans-serif;
+    --Box-Shadow:.1rem 0 .3rem rgba(0,0,0,0.9);
+}
+
+body {
+    background-color: #EEE;
+    font-size: 1.3rem;
+    font-family: var(--Body-Font-Family);
+}
+
+html {
+    font-size:62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 2rem 9%;
+    font-family: var(--Header-Font-Family);
+}
+
+h6 {
+    text-align: center;
+    font-size: 6rem;
+    margin: 3rem 0;
+    color: transparent;
+    -webkit-text-stroke: .08rem #000;
+    position: relative;
+    pointer-events: none;
+    letter-spacing: .3rem;
+    font-family: none;
+}
+
+h6 span {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: red;
+    font-size: 3rem;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #FFF;
+    box-shadow: var(--Box-Shadow);
+}
+
+.header h1 a{
+    color: #454545;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+}
+
+.header nav .menu{
+    display: flex;
+}
+
+.header .menu li{
+    margin-left: 3rem;
+}
+
+.header .menu li:first-child {
+    margin-left: 0;
+}
+
+.header .menu li a {
+    display: block;
+    padding: 1rem;
+    color: #222;
+    font-size: 1.8rem;
+}
+
+/*CSS FLEXBOX*/
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero > .box {
+    flex:  1 1 200px;
+    margin: 10px;
+}
+
+.box p {
+    text-align: center;
+    border: .1rem solid #454545;
+    padding: .8rem 1rem;
+    background-color: #FFF;
+    font-family: var(--Body-Font-Family);
+    font-size: 1.5rem;
+    border-radius: 0 0  .3rem .3rem;
+}
+
+/* CSS GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.grid .box:nth-child(n + 4) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.grid > div.ads {
+    border-top: .8rem solid #FF3000;
+    grid-column: 1;
+    grid-row: 2 / 5;
+    display: block;
+}
+
+.grid > div.ads p {
+    color: #333;
+    background-color: thistle;
+    padding: .5rem;
+    text-align: center;
+    font-family: var(--Body-Font-Family);
+    font-weight: bolder;
+}
+
+/* CSS GRID2 */
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-gap: 20px;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.grid2 .sidebar .box{
+    margin-bottom: 1.2rem;
+}
+
+.grid2 .video h2 {
+    text-align: center;
+    font-family: var(--Header-Font-Family);
+    background-color: #FF3000;
+    padding: 1rem;
+    color: #FFF;
+}
+
+/* CSS GRID3 */
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 800px;
+}
+
+.grid3 .box:nth-child(1) {
+    grid-row: 1 / 3;
+}
+
+
+.grid3 .box {
+    display: grid;
+}
+
+.grid3 .box img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self:end;
+}
+
+.grid3 .box p {
+    background-color: rgba(0, 0, 0, 0.233);
+    color: #FFF;
+    grid-column: 1;
+    grid-row: 2;
+    align-self:end;
+}
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h6 {
+        font-size: 4rem;
+    }
+    h6 span {
+        font-size: 2rem;
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid .box:nth-child(n + 4) {
+        display: block;
+    }
+    .grid > div.ads {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
+        grid-gap: 2rem; */
+        /* Nesse caso,
+        poderiamos usr GRID o FLEXBOX
+        para adeixar um ao lado do outro,
+        o grid, me foi mais conveniente.
+        => Abaixo usaremos o FLEXBOX;
+        com ele fica mais estiloso. 
+        O uso do gris está pronto, o
+        resultado será quase o mesmo. 
+        */
+        
+        display: flex;
+        overflow: scroll;
+    }
+    .sidebar .box {
+        flex: 1 0 200px;
+        margin: 0 .7rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 45%;
+    }
+    h6 {
+        font-size: 3rem;
+    }
+    h6 span {
+        font: 1.8rem;
+    }    
+    .header .menu li a:first-child {
+        padding: 0;
+    }
+    .grid > div.ads {
+        grid-column: 1 / 3;
+        grid-row: auto;
+    }
+}
